@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "declaration": true,
+    "baseUrl": ".",
+    "rootDir": "."
+  },
+  "include": ["packages/*/src", "packages/*/__tests__"],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tests",
+    "jest",
+    "lib",
+    "__tests__",
+    "**/*.test.ts"
+  ]
+}

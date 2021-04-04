@@ -1,0 +1,17 @@
+{
+  "name": "orz",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "father-build"
+  },
+  "devDependencies": {
+    "father-build": "^1.19.3",
+    "lerna": "^3.22.1",
+    "typescript": "^4.2.3"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "orz-shared",
+  "version": "1.0.0",
+  "license": "MIT",
+  "module": "src/index.ts"
+}
