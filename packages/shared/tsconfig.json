@@ -15,7 +15,7 @@
     "baseUrl": ".",
     "rootDir": "."
   },
-  "include": ["packages/*/src", "packages/*/__tests__"],
+  "include": ["src"],
   "exclude": [
     "node_modules",
     "dist",
