@@ -2,20 +2,26 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "removeComments": false,
-    "preserveConstEnums": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
     "noImplicitAny": false,
-    "allowSyntheticDefaultImports": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "preserveConstEnums": true,
+    // https://github.com/ezolenko/rollup-plugin-typescript2/issues/12#issuecomment-536173372
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": false,
+    "importHelpers": true,
+    "experimentalDecorators": true,
     "noUnusedLocals": true,
     "strictNullChecks": true,
-    "sourceMap": true,
-    "declaration": true,
+    "pretty": true,
     "baseUrl": ".",
     "rootDir": "."
   },
-  "include": ["src"],
+  "include": ["**/*.ts", "index.d.ts"],
   "exclude": [
     "node_modules",
     "dist",
@@ -23,6 +29,9 @@
     "jest",
     "lib",
     "__tests__",
-    "**/*.test.ts"
+    "fixtures",
+    "examples",
+    "**/*.test.ts",
+    "**/*.spec.ts"
   ]
 }

@@ -4,3 +4,7 @@ lib
 esm
 
 *.code-workspace
+.DS_Store
+
+.jest-coverage
+.jest-cache
