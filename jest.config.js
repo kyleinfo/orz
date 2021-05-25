@@ -1,10 +1,8 @@
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'jsdom',
-  testPathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib|esm|dist/'],
+  testPathIgnorePatterns: ['/node_modules/'],
   cacheDirectory: '.jest-cache',
   coverageDirectory: '.jest-coverage',
-  coveragePathIgnorePatterns: ['<rootDir>/packages/(?:.+?)/lib|esm|dist/'],
   coverageThreshold: {
     global: {
       branches: 100,
@@ -13,4 +11,15 @@ module.exports = {
       statements: 100,
     },
   },
+  collectCoverageFrom: [
+    'src/**/*.{js,ts}',
+
+    // 忽略依赖和打包
+    '!**/dist/**',
+    '!**/lib/**',
+    '!**/build/**',
+
+    // 忽略入口
+    '!src/index.ts',
+  ],
 };
