@@ -1,15 +1,30 @@
 module.exports = {
-  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/'],
   cacheDirectory: '.jest-cache',
   coverageDirectory: '.jest-coverage',
-  coverageThreshold: {
-    global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
+  coverageReporters: ['html', 'lcov', 'text'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
+  globals: {
+    'ts-jest': {
+      tsConfig: {
+        target: 'esnext',
+        removeComments: false,
+        moduleResolution: 'node',
+        experimentalDecorators: true,
+        allowSyntheticDefaultImports: true,
+        strictNullChecks: true,
+        noImplicitThis: true,
+        esModuleInterop: true,
+        sourceMap: true,
+      },
+      diagnostics: false,
     },
+  },
+  rootDir: __dirname,
+  transform: {
+    '^.+\\.tsx?$': 'babel-jest',
+    // '^.+\\.tsx?$': 'ts-jest',
   },
   collectCoverageFrom: [
     'src/**/*.{js,ts}',
