@@ -10,7 +10,7 @@ describe('render', () => {
     const now = new Date().toLocaleDateString();
     function tick(now) {
       const element = (
-        <div>
+        <div style="background: red">
           <h1>Hello, World!</h1>
           <h2>It is {now}.</h2>
         </div>

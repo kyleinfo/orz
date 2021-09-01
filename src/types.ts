@@ -22,3 +22,7 @@ export function isString(val?: unknown): val is string {
 export function isArray<T>(val: unknown): val is Array<T> {
   return getTypeof(val) === 'array';
 }
+
+export function isUndefind(val: unknown): val is undefined {
+  return getTypeof(val) === 'undefind';
+}

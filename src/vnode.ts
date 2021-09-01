@@ -6,7 +6,11 @@ export interface VNode {
   ref?;
 }
 
-export const REACT_ELEMENT_TYPE = 0xeac7;
+export let REACT_ELEMENT_TYPE: symbol | number = 0xeac7;
+
+if (typeof Symbol === 'function') {
+  REACT_ELEMENT_TYPE = Symbol.for('0xeac7');
+}
 
 export function h(type, props, key?: string, ref?): VNode {
   return {

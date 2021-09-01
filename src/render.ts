@@ -37,6 +37,7 @@ function creatDom(vnode, parent?: HTMLElement) {
     const ctor = vnode.type;
     if (isString(ctor)) {
       dom = document.createElement(ctor);
+      applyProps(dom, vnode.props);
     } else if (isFunction(ctor)) {
       if (isFunction(ctor.prototype?.render)) {
         const instance = new (ctor as any)(vnode.props);
@@ -59,6 +60,7 @@ function creatDom(vnode, parent?: HTMLElement) {
   }
 
   if (dom) {
+    applyProps(dom, vnode.props);
     const children = vnode.props?.children;
     if (children) {
       if (isArray(children)) {
@@ -75,4 +77,18 @@ function creatDom(vnode, parent?: HTMLElement) {
   }
 
   return dom;
+}
+
+const skipProps = ['children', 'ref', 'key'];
+
+function applyProps(dom: Element, props) {
+  for (const propName in props) {
+    if (skipProps.includes(propName)) continue;
+    const prop = props[propName];
+    switch (propName) {
+      case 'className':
+        dom.className = prop;
+        break;
+    }
+  }
 }
